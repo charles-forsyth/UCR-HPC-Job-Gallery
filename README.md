@@ -1,9 +1,4 @@
 # UCR HPC Job Gallery 🧬🔭🚀
-**The Standard Library of Automated Science**
-
-> *"Reproducible research starts with reproducible infrastructure."*
-
-This repository is the definitive collection of **verified High-Performance Computing (HPC) workflows** for the University of California, Riverside. It serves as the "Standard Model" for computational research across the campus.
 
 ---
 
