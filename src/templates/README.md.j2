@@ -1,0 +1,18 @@
+# UCR HPC Job Gallery
+
+Automated job script gallery for UCR High Performance Computing.
+
+## Directory Structure
+{% for dept, dept_jobs in jobs_by_dept.items() %}
+### {{ dept }}
+{% for job in dept_jobs %}
+- **{{ job.name }}** (`{{ job.relative_path }}`)
+  - Type: {{ job.script_type }}
+  {% if job.metadata %}
+  - Metadata: {{ job.metadata }}
+  {% endif %}
+{% endfor %}
+{% endfor %}
+
+## Submission Instructions
+To submit a new job script, follow the structure in `src/templates/SUBMISSION.md`.

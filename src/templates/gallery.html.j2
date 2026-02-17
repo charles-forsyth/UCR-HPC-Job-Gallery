@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR HPC Job Gallery</title>
+    <style>
+        body { font-family: sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { border: 1px solid #ccc; padding: 15px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+        .domain-tag { background-color: #007bff; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; }
+        .btn { display: inline-block; margin-top: 10px; padding: 5px 10px; background-color: #28a745; color: white; text-decoration: none; border-radius: 4px; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 5px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <h1>UCR HPC Job Gallery</h1>
+    <p>Last updated: {{ now }}</p>
+    
+    {% for dept, dept_jobs in jobs_by_dept.items() %}
+    <h2>{{ dept }}</h2>
+    <div class="gallery">
+        {% for job in dept_jobs %}
+        <div class="card">
+            <span class="domain-tag">{{ dept }}</span>
+            <h3><a href="{{ job.relative_path }}">{{ job.name }}</a></h3>
+            <p>Type: {{ job.script_type }}</p>
+            {% if job.metadata %}
+            <pre style="font-size: 0.8em; background: #f8f9fa; padding: 5px;">{{ job.metadata }}</pre>
+            {% endif %}
+            <a href="{{ job.relative_path }}" class="btn">View Script</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+</html>

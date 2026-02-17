@@ -3,12 +3,14 @@ import shutil
 import tempfile
 from pathlib import Path
 
+
 @pytest.fixture
 def temp_workspace():
     """Provides a temporary workspace directory."""
     temp_dir = tempfile.mkdtemp()
     yield Path(temp_dir)
     shutil.rmtree(temp_dir)
+
 
 @pytest.fixture
 def sample_slurm_script_content():
@@ -25,6 +27,7 @@ def sample_slurm_script_content():
 module load python/3.12
 python3 script.py
 """
+
 
 @pytest.fixture
 def sample_python_script_content():
