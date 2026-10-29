@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "UCR HPC Job Gallery: tested Slurm workflows across research disciplines"
+type: software
+authors:
+  - family-names: "Forsyth III"
+    given-names: "Charles E."
+    orcid: "https://orcid.org/0000-0003-4872-0296"
+    affiliation: "University of California, Riverside"
+repository-code: "https://github.com/charles-forsyth/UCR-HPC-Job-Gallery"
+license: MIT
+keywords:
+  - "Slurm"
+  - "HPC"
+  - "research workflows"
+  - "training"
